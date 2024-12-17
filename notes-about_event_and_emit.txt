@@ -1,8 +1,8 @@
 What is an Event?
-An event is like a log statement that is recorded on the blockchain.
-Events help clients (like DApps or frontend applications) to listen for specific occurrences in a smart contract.
-They are primarily used to record important actions such as updates, transactions, or errors.
+- An event is like a log statement that is recorded on the blockchain.
+- Events help clients (like DApps or frontend applications) to listen for specific occurrences in a smart contract.
+- They are primarily used to record important actions such as updates, transactions, or errors.
 
 What is emit?
-The emit keyword is used to "fire" or trigger an event in Solidity.
-When an event is emitted, its data is stored in the blockchain transaction log.
+- The emit keyword is used to "fire" or trigger an event in Solidity.
+- When an event is emitted, its data is stored in the blockchain transaction log.
