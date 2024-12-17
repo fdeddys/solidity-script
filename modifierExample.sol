@@ -15,21 +15,25 @@ contract Example {
     }
 
     // Pure function
+    // dont read or modified state
     function multiply(uint x, uint y) public pure returns (uint) {
         return x * y;
     }
 
     // View function
+    // read but dont modified state
     function getOwner() public view returns (address) {
         return owner;
     }
 
     // Payable function
+    // Accepts Ether with the function call
     function deposit() public payable {
         require(msg.value > 0, "Send Ether");
     }
 
     // External function
+    // Accessible only from outside the contract
     function externalCall() external pure returns (string memory) {
         return "External function called";
     }
