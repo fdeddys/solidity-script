@@ -1,0 +1,61 @@
+Understanding _;
+
+
+
+Code After _;
+If there is any code after _;, it will run after the original function.
+
+
+pragma solidity ^0.8.0;
+
+contract Example {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not the owner");
+        _; // Function code runs here
+    }
+
+    function restrictedFunction() public onlyOwner {
+        // Original function code
+        // This runs only if the require() check passes
+    }
+}
+
+
+
+Code Before _;
+If there is any code before _; in the modifier, it will run before the original function.
+
+
+pragma solidity ^0.8.0;
+
+contract Example {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    modifier logExecution() {
+        _;
+        // Code after the original function runs
+        emit FunctionExecuted(msg.sender);
+    }
+
+    event FunctionExecuted(address executor);
+
+    function doSomething() public logExecution {
+        // Original function logic
+    }
+}
+
+
+
+
+
+
